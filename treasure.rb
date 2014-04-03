@@ -1,12 +1,11 @@
 #!/usr/bin/env ruby
-
-require_relative 'treasureKind.rb'
+#encoding: utf-8
 
 module Napakalaki
 
 class Treasure
 
-  def initialize(name, goldCoins, minBonus, maxBonus,type)
+  def initialize(name, goldCoins, minBonus, maxBonus, type)
     @name = name
     @goldCoins = goldCoins
     @minBonus = minBonus
@@ -21,6 +20,9 @@ class Treasure
   attr_reader :maxBonus
   attr_reader :type
 
+  def to_s
+    "\nName = #{@name}, \nGoldcoins = #{@goldCoins}, \nminBonus: #{@minBonus}, \nmaxBonus: #{@maxBonus}, \ntype: #{@type}"
+  end
 
 end #Monster
 end

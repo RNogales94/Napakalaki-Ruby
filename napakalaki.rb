@@ -1,22 +1,34 @@
 #!/usr/bin/env ruby
 #encoding: utf-8
 
-require_relative 'combatResult.rb'
-require_relative 'player.rb'
-require_relative 'cardDealer.rb'
-require_relative 'monster.rb'
-
 module Napakalaki
 require "Singleton"
 
 	#Clase Napakalaki
 	class Napakalaki
 		include Singleton
+
+		#Constructor (es privado para que la clase sea singleton), no conocemos la
+    #implementación del constructor probablemente inicie a los players a traves
+    #de una peticion, y posteriormente inicie el juego con initgame() por ello:
+		#(faltan las comprobaciones pendiente de pregunta).
 			def intialize()
-				@currentPlayer
-				@currentMonster
-				@players = Array.new
+					Playernames = Array.new
+					@players = Array.new
+					@currentPlayer = nil
+					@currentMonster = nil
+					puts "Número de jugadores: "
+					int numPlayers = 0
+					numPlayers = gets
+
+					for i in 0..numPlayers
+						name = gets
+  					Playernames.push(name)
+  				end
+
+  				initGame(Playernames)
 			end
+
 		private
 			def initPlayers(names)
 			end
@@ -32,21 +44,27 @@ require "Singleton"
 			def combat()
 			end
 
-			def discardVisibleTreasure(treasure)
+			#treasure
+			def discardVisibleTreasure(t)
 			end
 
-			def discardHiddenTreasure(treasure)
+			#treasure
+			def discardHiddenTreasure(t)
 			end
 
-			def makeTreasureVisible(treasure)
+			#treasure
+			def makeTreasureVisible(t)
 				return true
 			end
 
+			#Array treasure, Array treasure
 			def buyLevels(visible, hidden)
 				return true
 			end
 
+			#Array String
 			def initGame(players)
+				initPlayers(players)
 			end
 
 			def getCurrentPlayer()
@@ -55,8 +73,8 @@ require "Singleton"
 			def getCurrentMonster()
 			end
 
-			def canMakeTreasureVisible(treasure)
-				return true
+			#treasure
+			def canMakeTreasureVisible(t)
 			end
 
 			def getVisibleTreasures()
@@ -66,15 +84,13 @@ require "Singleton"
 			end
 
 			def nextTurn()
-				return false
 			end
 
 			def nextTurnAllowed()
-				return false
 			end
 
+			#boolean
 			def endOfGame(result)
-				return false
 			end
 	end #Napakalaki (clase)
 

@@ -10,25 +10,15 @@ class Prize
 		@treasures = treasures
 		@levels = levels
 	end #initialize
-	
+
 	#Getters
 	attr_reader :treasures
 	attr_reader :levels
-		
+
 	#Metodo de conversion de Prize a string
 	def to_s
 		"Treasures = #{@treasures}, Levels = #{@levels}"
 	end
-	
+
 end #Prize
 end #modulue Napakalaki
-
-
-
-
-
-
-
-
-
-

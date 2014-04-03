@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+#encoding: utf-8
+
 module Napakalaki
 #Enumerado TreasureKind: se encarga de definir un conjunto definido de objetos
 	ONEHAND = :onehand
